@@ -1,0 +1,63 @@
+body {
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.5s ease;
+  font-family: bignoodletitling;
+  height:100vh;
+  width:100vw;
+}
+
+.wrapper {
+  height: 100vh;
+  width:100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-area {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height:50vh;
+}
+
+.right-text {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 40px;
+  width:28vw;
+}
+
+a {
+  margin-top:10px;
+  text-decoration: none;
+  color:white;
+  padding:10px;
+  text-align: center;
+  width:80px;
+  border-radius: 10px;
+  background-color: #b23222;
+}
+
+div.img-area {
+  width: 28vw;
+  height:auto;
+  background: url("wemadeit.gif");
+  background-position: center;
+  background-size: cover;
+}
+h2 {
+  font-size:2em;
+  margin:0;
+}
+input {
+  margin-top:15px;
+}
+textarea {
+  margin-top:15px;
+  margin-bottom:5px;
+}
