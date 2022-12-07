@@ -1,0 +1,14 @@
+<template>
+  <the-calculator></the-calculator>
+</template>
+
+<script>
+import TheCalculator from './components/TheCalculator.vue'
+
+export default {
+  name: 'App',
+  components: {
+    TheCalculator,
+  }
+}
+</script>
