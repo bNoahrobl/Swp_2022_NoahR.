@@ -98,7 +98,7 @@ export default {
     }
     .row > .btn {
         border: 2px solid var(--font-color);
-        background: #219ebc;
+        background: #18de1b;
         height:10vh;
         padding:20px;
         width:20vw;
@@ -111,7 +111,7 @@ export default {
         width:80vw;
         border: 2px solid var(--font-color);
         height:10vh;
-        background: #219ebc;
+        background: #271ed6;
         padding:20px;
         text-align:center;
         font-size:2em;
