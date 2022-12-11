@@ -5,13 +5,17 @@
                 <input v-model="currentValue"/>
                 
                     <div class="row">
-                        <simple-button class="btn" beschriftung="+" @calculate="calculate"></simple-button>
-                        <simple-button class="btn" beschriftung="-" @calculate="calculate"></simple-button>
-                        <simple-button class="btn" beschriftung="/" @calculate="calculate"></simple-button>
-                        <simple-button class="btn" beschriftung="*" @calculate="calculate"></simple-button>
+                        <simple-button class="btn" beschreibung="-" @calculate="calculate"></simple-button>
+                        
+                        <simple-button class="btn" beschreibung="+" @calculate="calculate"></simple-button>
+                        
+                        <simple-button class="btn" beschreibung="/" @calculate="calculate"></simple-button>
+                        
+                        <simple-button class="btn" beschreibung="*" @calculate="calculate"></simple-button>
                     </div>
                     
-                <simple-button id="large" class="btn" beschriftung="=" @calculate="calculate"></simple-button>
+                <simple-button id="large" class="btn" beschreibung="=" @calculate="calculate"></simple-button>
+                
        </div>
     </div>
 </template>
@@ -20,6 +24,7 @@
 import SimpleButton from "./SimpleButton.vue";
 
 export default {
+
     name: 'TheCalculator',
     components: {
         SimpleButton
@@ -32,23 +37,30 @@ export default {
         }
     },
     methods: {
-        calculate(beschriftung) {
-            if(beschriftung === "+" | beschriftung === "-" | beschriftung === "*" | beschriftung === "/") {
+        calculate(beschreibung) {
+            if(beschreibung === "-" | beschreibung === "+" | beschreibung === "*" | beschreibung === "/") {
                 this.previousValue = parseInt(this.currentValue);
                 this.currentValue = "";
-                this.previousOperator = beschriftung;
-            } else if(beschriftung === "=") {
-                if(this.previousOperator === "+") {
+                this.previousOperator = beschreibung;
+            } else if(beschreibung === "=") {
+                
+                if(this.previousOperator === "-") {
                     this.currentValue = this.previousValue + parseInt(this.currentValue);
-                } else if(this.previousOperator === "-") {
+                
+                } else if(this.previousOperator === "+") {
                     this.currentValue = this.previousValue - parseInt(this.currentValue);
-                } else if(this.previousOperator === "*") {
-                    this.currentValue = this.previousValue * parseInt(this.currentValue);
+                
                 } else if(this.previousOperator === "/") {
+                    this.currentValue = this.previousValue * parseInt(this.currentValue);
+                
+                } else if(this.previousOperator === "*") {
                     this.currentValue = this.previousValue / parseInt(this.currentValue);
                 }
+            
+            
+            
             } else {
-                console.log("Falsche Beschriftung");
+                console.log("Falsche beschreibung");
             }
         }
     }

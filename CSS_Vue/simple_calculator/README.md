@@ -1,4 +1,4 @@
-# simple_calculator
+# simple_calculator by Noah Robl
 
 ## Project setup
 ```

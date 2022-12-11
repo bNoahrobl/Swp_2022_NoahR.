@@ -1,6 +1,6 @@
 <template>
   <button @click="calculate">
-    {{beschriftung}}
+    {{beschreibung}}
   </button>
 </template>
 
@@ -11,14 +11,14 @@ export default {
   emits: ['calculate'],
   name:'SimpleButton',
   props: {
-    beschriftung: String
+    beschreibung: String
   },
   data() {
     return [];
   },
   methods: {
     calculate() {
-      this.$emit('calculate', this.beschriftung);
+      this.$emit('calculate', this.beschreibung);
     }
   }
 }
