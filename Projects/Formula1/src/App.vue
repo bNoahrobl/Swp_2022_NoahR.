@@ -1,10 +1,13 @@
 <template>
   <div class="alles">
-    <div class="products-container">
-      <h2>Name</h2>
+    <div class="head">
+    <h2>Name</h2>
       <input type="text" v-model="name" class="input">
       <button @click="fetchProducts()" class="Login">Login</button>
       <h2>Products</h2>
+    </div>
+    <div class="products-container">
+      
       <div v-for="product in products" :key="product.id" class="product-item">
         <img :src="product.img" alt="product image">
         <div class="product-info">
@@ -29,8 +32,8 @@
       
       <h3 class="total">Total: {{ total }}€</h3>
       <div class="buttons-bottom">
-      <button @click="checkout()" class="checkout-btn">Checkout</button>
-      <button @click="cancel()" class="cancel-btn">Cancel Order</button>
+      <button @click="checkout()" class="checkout-btn">Save Cart</button>
+      <button @click="cancel()" class="cancel-btn">Delete Cart</button>
     </div>
     </div>
     
@@ -43,7 +46,7 @@
  import image4 from "./assets/haas-vf-23-1.jpg"
  import image5 from "./assets/AT-023.png"
  import image6 from "./assets/FW-44.jpg"
- import image7 from "./assets/F1-74.png"
+ import image7 from "./assets/F1-75.jpg"
  import image8 from "./assets/W12.jpg"
  import image9 from "./assets/c42.jpg"
  import image10 from "./assets/MCL34.jpg"
@@ -153,17 +156,31 @@ export default {
     }
   }
 }
+
+ 
 </script>
 <style scoped>
 .alles{
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-weight: 950;
+  background: lightgrey;
+}
+.head
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .products-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap ;
+  flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;
+  
+  gap:50px;
+  
+ 
 }
 .buttons-bottom{
   display: flex;
@@ -191,9 +208,13 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
   padding: 10px;
   margin-bottom: 10px;
+  background: whitesmoke;
+ 
   border: 1px solid gray;
 }
   
@@ -213,26 +234,47 @@ export default {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease
+  }
+  .add-to-cart-btn:hover{
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .checkout-btn {
     width: 150px;
-    padding: 5px 15px;
     background-color: green;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
+    width: 150px;
+    padding: 10px 20px;
+    transition: all 0.3s ease
+  }
+  
+  .checkout-btn:hover{
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .cancel-btn
   {
     width: 150px;
-    padding: 5px 15px;
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease
+  }
+  .cancel-btn:hover{
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .Login{
     margin-top: 20px;
@@ -242,11 +284,27 @@ export default {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .Login:hover{
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   img {
-    width: 200px;
-    height: 100px;
+    width: 490px;
     object-fit: cover;
+    transition: all 0.3s ease;
+    cursor:zoom-in;
+    
+    
+  }
+  img:active{
+    transform: scale(2.5);
+    box-shadow: 0 4px 6px black;
+    position:absolute;
+    left: 46rem;
+    cursor:zoom-out
   }
   .cart-container {
     display: flex;
