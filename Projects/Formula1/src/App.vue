@@ -195,13 +195,16 @@ export default {
         border: none;
         color: #fff;
         padding: 15px 30px;
-        text-decoration: none;
+        text-decoration:dotted;
         margin: 4px 2px;
         cursor: pointer;
-        font-size: larger;
-        font-style: italic;
-        font-weight: 950;
-        
+        transition: all 0.3s ease ;
+        font-size: large;
+}
+.input:hover{
+  background-color: grey;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .product-item {
@@ -303,8 +306,8 @@ export default {
     transform: scale(2.5);
     box-shadow: 0 4px 6px black;
     position:absolute;
-    left: 46rem;
-    cursor:zoom-out
+    left: 44.5rem;
+    cursor:zoom-out;
   }
   .cart-container {
     display: flex;
