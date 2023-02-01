@@ -138,6 +138,7 @@ export default {
 
     },
       checkout() {
+        if(this.cart.length>0){
       this.cart.push(this.name)
       // Perform checkout here, for example by sending the cart data to an API
       fetch("https://vue-best-content-do-not-open-default-rtdb.europe-west1.firebasedatabase.app/checkout.json",
@@ -152,8 +153,10 @@ export default {
       
       this.cart = []
       this.confirmedName= ''
+        }else
+        {return}
+      }
 
-    }
   }
 }
 
